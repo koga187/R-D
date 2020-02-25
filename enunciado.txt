@@ -1,0 +1,105 @@
+Segue abaixo instruções do teste a ser realizado.
+
+ 
+
+ 
+
+Recomendações:
+
+Caso não consiga finalizar o teste, vamos avaliar até onde evoluiu, ou seja, nos envie mesmo assim.
+Será avaliado design Patterns, organização de código, lógica de programação e boas práticas.
+ 
+
+ 
+
+ 
+
+COTAÇÃO DE VIAGEM
+
+ 
+
+ 
+
+Vamos criar um programa, que seja capaz de calcular o menor preço possível de passagens, independentemente do número de conexões necessárias.
+
+ 
+
+O arquivo routes.csv, possui algumas rotas cadastradas com seus respectivos preços.
+
+ 
+
+GRU,BRC,10
+
+GRU,SCL,18
+
+GRU,ORL,56
+
+GRU,CDG,75
+
+SCL,ORL,20
+
+BRC,SCL,5
+
+ORL,CDG,5
+
+ 
+
+Caso nosso cliente queira ir para SCL partindo de GRU, nosso programa deverá indicar a seguinte rota e preço mais em conta.
+
+ 
+
+Request
+ 
+
+    GET /quote/GRU/SCL
+
+ 
+
+Response
+ 
+
+    {       
+
+"route": "GRU,BRC,SCL",       
+
+"price": 15   
+
+     }
+
+ 
+
+ 
+
+Também será necessária a implementação de outro endpoint para registro de rotas, exemplo:
+
+ 
+
+    POST /route
+
+ 
+
+ 
+
+    {     
+
+  "from": "BRC",       
+
+  "to": "BA",      
+
+   "price": 10  
+
+    }
+
+ 
+
+ 
+
+Informações adicionais:
+
+ 
+
+Envie o código fonte zipado ou link do repositorio GIT, com readme.md com instruções de como iniciar o programa
+Estruture sua aplicação seguindo as boas práticas de desenvolvimento
+Implemente testes unitários
+ 
+
