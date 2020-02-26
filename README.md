@@ -22,7 +22,7 @@ Tempo de desenvolvimento:
 
   Dia 1: Iniciado das 15h as 16h
 
-  Dia 2: Iniciado 13:30 as 
+  Dia 2: Iniciado 13:30 as 16h
 
 ### Dependencias:
 
