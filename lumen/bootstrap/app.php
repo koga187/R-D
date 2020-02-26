@@ -107,6 +107,7 @@ $app->configure('app');
 $app->router->group([
     'namespace' => 'App\Http\Controllers',
 ], function ($router) {
+    require __DIR__.'/../routes/quote.php';
     require __DIR__.'/../routes/web.php';
 });
 
