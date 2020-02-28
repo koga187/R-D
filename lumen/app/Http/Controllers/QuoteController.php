@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 
 class QuoteController extends Controller
 {
+    use RESTActions;
 
     public function index() {
         return  [
