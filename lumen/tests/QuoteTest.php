@@ -42,7 +42,7 @@ class QuoteTest extends TestCase
      */
     public function testV1InsertQuoteWithoutPrice()
     {
-        $this->json('POST', '/quote', [
+        $this->json('POST', '/v1/quote/', [
             'from' => 'BRC',
             'to' => 'BA',
             'price' => 10])

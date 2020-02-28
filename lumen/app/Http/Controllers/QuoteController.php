@@ -31,7 +31,7 @@ class QuoteController extends Controller
     }
 
     public function saveQuote() {
-
+        return ['created' => true];
     }
 
     public function getCheaperQuote() {
