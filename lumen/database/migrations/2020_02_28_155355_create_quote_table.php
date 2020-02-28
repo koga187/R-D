@@ -13,7 +13,7 @@ class CreateQuoteTable extends Migration
      */
     public function up()
     {
-        Schema::create('quote', function (Blueprint $table) {
+        Schema::create('quotes', function (Blueprint $table) {
             $table->increments('id');
             $table->string('from', 120);
             $table->string('to', 120);
@@ -29,6 +29,6 @@ class CreateQuoteTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quote');
+        Schema::dropIfExists('quotes');
     }
 }

@@ -4,17 +4,19 @@ Obs: Para executar este teste você precisa do docker e docker-compose instalado
 
 1 - Para executar o projeto basta rodar o comando abaixo:
 
-	docker-compose up -d
+	  docker-compose up -d
 
-1.2 - Em seguida para criar as tabelas no banco de dados:
+1.2 - Comando para criar as tabelas no banco de dados:
 
-  docker exec -it drogaraia_php php /var/www/html/artisan migrate
+    docker exec -it drogaraia_php php /var/www/html/artisan migrate
 
+1.3 - Em seguida vamos popular os dados na tabela com o comando abaixo:
 
+    docker exec -it drogaraia_php php /var/www/html/artisan db:seed
 
 2 - Neste projeto estamos utilizando Lumen o Micro-Framework do Laravel
 
-    Este foi escolhido devido a baixa complexidade do projeto, não é preciso de todo o stack de bibliotecas do Laravel.
+Este foi escolhido devido a baixa complexidade do projeto, não é preciso de todo o stack de bibliotecas do Laravel.
 
 ## Comandos úteis
 
