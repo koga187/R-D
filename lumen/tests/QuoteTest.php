@@ -9,8 +9,8 @@ class QuoteTest extends TestCase
         $this->json('GET', '/v1/quote/1')
              ->seeJson(
                 [
-                    'from' => 'BRC',
-                    'to' => 'BA',
+                    'from' => 'GRU',
+                    'to' => 'BRC',
                     'price' => 10
                 ]);
     }
@@ -21,8 +21,8 @@ class QuoteTest extends TestCase
              ->seeJson(
                 [
                     'from' => 'BRC',
-                    'to' => 'BA',
-                    'price' => 10
+                    'to' => 'BRC',
+                    'price' => 5
                 ]);
 
         $this->json('GET', '/v1/quote')
@@ -44,8 +44,7 @@ class QuoteTest extends TestCase
     {
         $this->json('POST', '/v1/quote/', [
             'from' => 'BRC',
-            'to' => 'BA',
-            'price' => 10])
+            'to' => 'BA'])
              ->seeJson([
                 'created' => true,
              ]);

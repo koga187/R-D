@@ -3,35 +3,28 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Quotes;
 
 class QuoteController extends Controller
 {
-    use RESTActions;
-
     public function index() {
-        return  [
-            0 => [
-                'from' => 'BRC',
-                'to' => 'BA',
-                'price' => 10
-            ],
-            1 => [
-                'from' => 'GRU',
-                'to' => 'CDG',
-                'price' => 75
-            ]
-        ];
+        return Quotes::all();
     }
 
     public function show(Request $request, $id) {
-        return  [
-            'from' => 'BRC',
-            'to' => 'BA',
-            'price' => 10
-        ];
+        $quote = Quotes::where('id', $id)->first();
+        return $quote;
     }
 
-    public function store() {
+    public function store(Request $request) {
+        $quote = new Quotes();
+
+        $quote->from  = $request->from;
+        $quote->to    = $request->to;
+        $quote->price = $request->price;
+        
+        $quote->save();
+
         return ['created' => true];
     }
 
