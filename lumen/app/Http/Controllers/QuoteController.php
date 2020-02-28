@@ -7,15 +7,7 @@ use Illuminate\Http\Request;
 class QuoteController extends Controller
 {
 
-    public function getQuote(Request $request, $id = null) {
-        if (!is_null($id)) {
-            return  [
-                'from' => 'BRC',
-                'to' => 'BA',
-                'price' => 10
-            ];
-        }
-
+    public function index() {
         return  [
             0 => [
                 'from' => 'BRC',
@@ -30,15 +22,27 @@ class QuoteController extends Controller
         ];
     }
 
-    public function saveQuote() {
+    public function show(Request $request, $id) {
+        return  [
+            'from' => 'BRC',
+            'to' => 'BA',
+            'price' => 10
+        ];
+    }
+
+    public function store() {
         return ['created' => true];
+    }
+
+    public function update() {
+
     }
 
     public function getCheaperQuote() {
         
     }
 
-    public function deleteQuote() {
+    public function destroy() {
 
     }
 }

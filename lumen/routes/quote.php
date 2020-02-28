@@ -13,9 +13,11 @@
 
 $router->group(['prefix' => 'v1'], function () use ($router) {
     $router->group(['prefix' => 'quote'], function () use ($router) {
-        $router->get('/', "QuoteController@getQuote");
-        $router->get('/{id: [0-9]+}', "QuoteController@getQuote");
+        $router->get('/', "QuoteController@index");
+        $router->get('/{id: [0-9]+}', "QuoteController@show");
         $router->get('/sourceCountry/destinyCountry', "QuoteController@getCheaperQuote");
-        $router->post('/', 'QuoteController@saveQuote');
+        $router->post('/', 'QuoteController@store');
+        $router->put('/{id}', 'QuoteController@update');
+        $router->delete('/{id}', 'QuoteController@destroy');
     });
 });
